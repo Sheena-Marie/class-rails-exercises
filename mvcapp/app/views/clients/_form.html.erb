@@ -1,0 +1,33 @@
+<%= simple_form_for(@client) do |f| %>
+  <% if @client.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@client.errors.count, "error") %> prohibited this client from being saved:</h2>
+
+      <ul>
+      <% @client.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <% if params[:company] %>
+    <%= f.input :company_id, as: :hidden, input_html: { value: @company.id, class: 'special-input' } %>
+    <% else %>
+  <%= f.association :company %>
+  <% end %>
+  <div class="field">
+    <%= f.input :name %>
+
+  </div>
+  <div class="field">
+    <%= f.input :location %>
+
+  </div>
+  <div class="field">
+    <%= f.input :phone %>
+
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

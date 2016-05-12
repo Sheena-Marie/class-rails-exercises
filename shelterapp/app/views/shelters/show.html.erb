@@ -1,0 +1,66 @@
+<p id="notice"><%= notice %></p>
+
+<img src="https://maps.googleapis.com/maps/api/staticmap?zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C<%= @shelter.latitude %>,<%= @shelter.longitude %>&key=">
+
+<p>
+  <strong>User:</strong>
+  <%= @shelter.user %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @shelter.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @shelter.description %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @shelter.street %>
+</p>
+
+<p>
+  <strong>Suburb:</strong>
+  <%= @shelter.suburb %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @shelter.state %>
+</p>
+
+<p>
+  <strong>Postcode:</strong>
+  <%= @shelter.postcode %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @shelter.country %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @shelter.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @shelter.longitude %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @shelter.website %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @shelter.phone %>
+</p>
+
+<%= link_to 'Edit', edit_shelter_path(@shelter) %> |
+<%= link_to 'Back', shelters_path %>

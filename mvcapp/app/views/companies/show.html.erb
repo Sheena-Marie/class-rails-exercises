@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @company.name %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @company.website %>
+</p>
+
+<p>
+  <strong>Num of employees:</strong>
+  <%= @company.num_of_employees %>
+</p>
+
+<h4>Clients</h4>
+<ul>
+<%= @clients.each do |client| %>
+  <li><%= client.name %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Edit', edit_company_path(@company) %> |
+<%= link_to 'Back', companies_path %>

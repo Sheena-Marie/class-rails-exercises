@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @shelter_type.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @shelter_type.description %>
+</p>
+
+<%= link_to 'Edit', edit_shelter_type_path(@shelter_type) %> |
+<%= link_to 'Back', shelter_types_path %>

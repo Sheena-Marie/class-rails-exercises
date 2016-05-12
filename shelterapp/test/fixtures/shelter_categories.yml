@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  shelter_id: 
+  shelter_type: MyString
+  references: MyString
+
+two:
+  shelter_id: 
+  shelter_type: MyString
+  references: MyString
