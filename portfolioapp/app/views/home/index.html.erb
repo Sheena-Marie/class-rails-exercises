@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>My Portfolio</h1>
+    <p>Behold the talent before you!</p>
+
+      <% if user_signed_in? %>
+        <%= link_to 'Add portfolio item', new_portfolio_item_path, class: 'btn btn-success' %>
+      <% end %>
+</div>

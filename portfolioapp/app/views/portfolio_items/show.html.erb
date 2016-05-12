@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-default">
+        <div class="panel-body">
+
+
+
+          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <% @portfolio_items.each_with_index do |portfolio_items, index| %>
+                <li data-target="#carousel-example-generic" data-slide-to="<%= index %>" class="<%= 'active' if index == 0 %>"></li>
+                <% end %>
+              </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+              <% @portfolio_items.each_with_index do |portfolio_item, index| %>
+              <div class="item <%= 'active' if index == 0 %> ">
+                <%= image_tag portfolio_item.image %>
+
+                <div class="carousel-caption">
+                  <%= portfolio_item.caption %>
+
+                </div>
+              </div>
+              <% end %>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+
+
+          <!-- <%= image_tag @portfolio_item.image, class: 'img-rounded', width: '100%', alt: @portfolio_item.caption, title: @portfolio_item.caption %>
+          <h4>
+            <%= @portfolio_item.caption %>
+          </h4>
+          <p>
+            <%= @portfolio_item.description %>
+          </p> -->
+          <%= link_to 'Edit', edit_portfolio_item_path(@portfolio_item) %>
+          <%= link_to 'Back', portfolio_items_path %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
