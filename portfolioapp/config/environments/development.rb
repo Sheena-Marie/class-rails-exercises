@@ -39,9 +39,13 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-  config.action_mailer.delivery_method = :smpt
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    ess:  'smtp.gmail.com'
-    
-  }
+    address:  'smtp.mailgun.org',
+    port: 587,
+    domain: 'example.com',
+    user_name: ENV['MAILGUN_USERNAME'],
+    password: ENV['MAILGUN_PASSWORD'],
+    authentication: 'plain',
+    enable_starttls_auto: true }
 end
