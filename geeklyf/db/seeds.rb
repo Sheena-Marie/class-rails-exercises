@@ -16,4 +16,5 @@ product.each do |product|
   Product.create(product)
 end
 
-user=
+user = User.create(email: 'admin2@example.com', password: 'password')
+account = Account.create(user_id: user.id, shipping_address: '7 Kelly St', phone: '1234567890')
