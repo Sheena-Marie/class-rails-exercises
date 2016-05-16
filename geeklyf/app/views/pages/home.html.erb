@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>The Shop</h1>
+  <div class="row">
+    <% @products.each do |product| %>
+    <div class="col-md-4">
+      <div class="card">
+        <img class="card-img-top" src="<% product.image %>" alt="Card image cap">
+        <div class="card-block">
+          <h4 class="card-title"><%= link_to product.name, product %>
+          <span class="label label-default"><%= product.brand %></span></h4>
+          <p class="card-text"><%= product.description %></p>
+          <a href="#" class="btn btn-success btn-block"><i class="fa fa-cart-plus"></i> Buy Now</a>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
