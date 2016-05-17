@@ -1,5 +1,15 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_product, only: [:show, :edit, :update, :destroy, :like, :unlike]
+
+  def like
+    @product.liked_by current_user
+    redirect_to :back
+  end
+
+  def unlike
+    @product.unliked_by current_user
+    redirect_to :back
+  end
 
   # GET /products
   # GET /products.json
